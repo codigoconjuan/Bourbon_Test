@@ -1,0 +1,79 @@
+@import "bourbon/bourbon";
+@import "neat/neat";
+
+$mobile: new-breakpoint(max-width 480px, 6);
+$desktop: new-breakpoint(min-width 850px);
+
+header {
+
+	
+	@include outer-container;
+
+	@include background-image(linear-gradient(white 0, yellow 50%, transparent 50%));
+}
+
+main {
+	
+
+	background-color: blue;
+	margin-bottom:20px;
+
+	@include outer-container;
+
+	section#index {
+		@include outer-container;
+
+		@include span-columns(6);
+	}
+
+	aside {
+			@include outer-container;
+
+			@include span-columns(6);
+	
+	}
+}
+
+h2 {
+font-size: rem(40);
+
+}
+.example {
+
+
+    @include span-columns(6);
+    background-color:red;
+    .nested-example {
+    	@include omega;
+         @include span-columns(3 of 6);
+         background-color:blue;
+    }
+}
+
+#second {
+	@include outer-container;
+
+	#uno {
+		background-color:yellow;
+		height: 30px;
+		@include span-columns(8);
+
+		@include media($mobile) {
+		  @include span-columns(3);
+		}
+	}
+
+	#dos {
+		background-color:black;
+		height: 30px;
+		@include span-columns(4);
+
+		@include media($mobile) {
+		  @include span-columns(3);
+		}
+	}
+}
+
+.button {
+	@include button(shiny, #ff0000);
+}
